@@ -10,17 +10,16 @@ app.controller('statsCtrl', function ($scope) {
       console.log('Received similarities:', json);
       var data = JSON.parse(json);
 
-      // Extraer el único valor del objeto
       for (var key in data) {
         if (data.hasOwnProperty(key)) {
           $scope.similarity = data[key];
-          break; // Solo necesitas la primera clave
+          break;
         }
       }
 
       console.log('$scope.similarity:', $scope.similarity);
       console.log('Similarity:', $scope.similarity);
-      $scope.$apply(); // Asegúrate de aplicar los cambios al ámbito de AngularJS
+      $scope.$apply();
     });
   };
 
@@ -34,3 +33,4 @@ app.controller('statsCtrl', function ($scope) {
     init();
   });
 });
+
